@@ -24,17 +24,6 @@
 	(if (= (getvar "Tilemode") 0)(setvar "Tilemode" 1)(setvar "Tilemode" 0))
 	(princ)
 )
-;**********************************************************************
-
-(defun C:CPSPL () ; Export A list of Conveyor Supports
-	(command "_-vbarun" "BESDSPLIST")
-	(princ)
-)
-(defun C:AREACHECK () ; Check All Area_Function and Area_Function Index missing or not.
-	(command "_-vbarun" "AreaCheck")
-	(princ)
-)
-
 (defun c:cds (/ sty m na) ; Add New Dimension Style to user specified scaled factor
    (setvar "cmdecho" 0)
    (if (= (tblsearch "style" "dimtext") nil)
