@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfSerializable_Attribute_Definition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Serializable_Attribute_Definition>
+    <attlist />
+    <layer>BGH_BLK_ATT_Photocells</layer>
+    <height>120</height>
+    <position>
+      <double>-480</double>
+      <double>-50</double>
+      <double>20</double>
+    </position>
+    <isconstant>false</isconstant>
+    <rotation>4.71238898038469</rotation>
+    <tag>PECCOUNT</tag>
+    <text_style>BGH_Attributes</text_style>
+    <width_factor>0.8</width_factor>
+    <layer_color>7</layer_color>
+  </Serializable_Attribute_Definition>
+  <Serializable_Attribute_Definition>
+    <attlist />
+    <layer>BGH_BLK_ATT_Elevation relative</layer>
+    <height>120</height>
+    <position>
+      <double>-280</double>
+      <double>-50</double>
+      <double>20</double>
+    </position>
+    <isconstant>false</isconstant>
+    <rotation>4.71238898038469</rotation>
+    <tag>ELEVATION_RELATIVE2</tag>
+    <text_style>BGH_Attributes</text_style>
+    <width_factor>0.8</width_factor>
+    <layer_color>7</layer_color>
+  </Serializable_Attribute_Definition>
+  <Serializable_Attribute_Definition>
+    <attlist />
+    <layer>BGH_BLK_ATT_Elevation</layer>
+    <height>120</height>
+    <position>
+      <double>-280</double>
+      <double>-50</double>
+      <double>20</double>
+    </position>
+    <isconstant>false</isconstant>
+    <rotation>4.71238898038469</rotation>
+    <tag>ELEVATION_2</tag>
+    <text_style>BGH_Attributes</text_style>
+    <width_factor>0.8</width_factor>
+    <layer_color>7</layer_color>
+  </Serializable_Attribute_Definition>
+  <Serializable_Attribute_Definition>
+    <attlist />
+    <layer>BGH_BLK_ATT_CP_X</layer>
+    <height>20</height>
+    <position>
+      <double>0</double>
+      <double>0</double>
+      <double>0</double>
+    </position>
+    <isconstant>true</isconstant>
+    <rotation>0</rotation>
+    <tag>CP_2_CONST</tag>
+    <text_style>BGH_Text_3.5</text_style>
+    <width_factor>1</width_factor>
+    <layer_color>7</layer_color>
+  </Serializable_Attribute_Definition>
+  <Serializable_Attribute_Definition>
+    <attlist />
+    <layer>BGH_BLK_ATT_CP_X_EH</layer>
+    <height>75</height>
+    <position>
+      <double>-10</double>
+      <double>-465.9106412005458</double>
+      <double>0</double>
+    </position>
+    <isconstant>false</isconstant>
+    <rotation>1.5707963267948966</rotation>
+    <tag>CP_2_EH</tag>
+    <text_style>BGH_Text_3.5</text_style>
+    <width_factor>1</width_factor>
+    <layer_color>130</layer_color>
+  </Serializable_Attribute_Definition>
+  <Serializable_Attribute_Definition>
+    <attlist />
+    <layer>BGH_BLK_ATT_CP_X</layer>
+    <height>75</height>
+    <position>
+      <double>0</double>
+      <double>0</double>
+      <double>0</double>
+    </position>
+    <isconstant>false</isconstant>
+    <rotation>1.5707963267948966</rotation>
+    <tag>CP_2</tag>
+    <text_style>BGH_Text_3.5</text_style>
+    <width_factor>1</width_factor>
+    <layer_color>7</layer_color>
+  </Serializable_Attribute_Definition>
+</ArrayOfSerializable_Attribute_Definition>
