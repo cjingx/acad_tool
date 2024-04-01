@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html>
+	<head> 
+		<title>BGS Revit Converter Mannual</title>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+    <body>
+		<div id="banner">
+			<img id="logo" src="imgs/bg_logo.png" alt="bg_logo"/>
+			<span id="page-title"> BGS Tool Help Site </span>
+		</div>
+		<br>
+		<br>
+		<div id = "navs">
+			<button><a href="bgs_acad_tool.html">AutoCAD Tool Mannual</a></button>
+			<button><a href="bgs_revit_converter.html">Revit Tool Mannual</a></button>
+		</div>
+		<hr>
+        <h1 id="bgs-acad-to-revit-converter">BGS Acad To Revit Converter</h1>
+        <h2 id="overall-process">Overall Process</h2>
+        <p>The conversion process takes two steps</p>
+        <ol>
+        <li>the first step, we use AutoCAD command to export the drawing data</li>
+        <li>the second step, we run a revit plugin to generate the model</li>
+        </ol>
+        <p>We call the first step <code>EXPORTCADDATA</code>, the second step <code>IMPORTCADDATA</code></p>
+        <p>Below is an illustration of how the process flows.</p>
+        <p><img src="https://i.imgur.com/BqFV0kW.png" alt=""></p>
+        <h2 id="discalimer">Discalimer</h2>
+        <p>This document may seems timidating, as there is quite a number of settings, kindly be patient and remeber</p>
+        <ol>
+        <li>the settings is usually only need to be done <code>once</code> for the project</li>
+        <li>after that, the whole process is <code>two button pressing</code> process</li>
+        </ol>
+        <h2 id="step-1-dwg-to-data-">Step 1 :  <code>dwg</code> to <code>data</code></h2>
+        <h3 id="environment">Environment</h3>
+        <p><img src="imgs/acad-logo.png" alt="AutoCAD"></p>
+        <h3 id="process-description">Process Description</h3>
+        <p>AutoCAD will scan the drawing, export all the blocks which will be used by revit and generate an sheet of location data to tell revit how to place these blocks in the future.</p>
+        <p>It generates all the data revit need to rebuilt a 3D model which is exactly the same as the originl model</p>
+        <h3 id="command">Command</h3>
+        <p><code>EXPORTCADINFO</code></p>
+        <h3 id="user-interface">User Interface</h3>
+        <p><img src="https://i.imgur.com/WmsoLGC.png =500x" alt="Main UI"></p>
+
+        <h3 id="arguments">Arguments</h3>
+
+        <h4 id="-project-directory-"><code>Project Directory</code></h4>
+        <ul>
+            <li>This is the directory which the program save all the exported data for the whole project</li>
+            <li>The program will create one directory under the <code>Project Directory</code> for each drawing </li>
+        </ul>
+
+        <h4 id="-drawings-"><code>Drawings</code></h4>
+        <ul>
+            <li>the <code>dwg</code> drawings you wish to export. </li>
+            <li>by default, all open drawings will be loaded here, use the checkbox to unselect unwanted drawings</li>
+        </ul>
+
+        <h4 id="-block-units-"><code>Block Units</code></h4>
+
+        <ul>
+            <li><code>mm</code> for all BEUMER projects</li>
+            <li>program is supposed to be able to work in the imperial environment, but this is not throughly tested.</li>
+        </ul>
+
+        <h4 id="-enable-information-attachment-"><code>Enable Information Attachment</code></h4>
+
+        <ul>
+            <li>if we want to attach <code>attributes</code> or <code>properties</code> later, we need the block to have an <code>identifier attribute</code>, this attribute is used to differentiate itself from other blocks</li>
+            <li>In BEUMER group, a typical <code>identifier attribute</code> is <code>REF_DESC</code></li>
+            <li>we use this attribute to identify the block and attach the <code>properties</code> later.</li>
+            <li>if this option is unselected, we will only have a data-free 3d model in revit</li>
+        </ul>
+
+        <h4 id="-export-"><code>Export</code></h4>
+        <ul>
+            <li>drawing data will be extracted and exported.</li>
+            <li>for each drawing, a <code>drawing directory</code> will be created under <code>Project Driectory</code></li>
+            <li>the <code>drawing directory</code> contains all the data needed for <code>Revit</code> to re-create the model in revit</li>
+        </ul>
+        <h2 id="step-2-data-to-rvt-model">Step 2 : <code>data</code> to <code>rvt</code> model</h2>
+        <h3 id="process-description">Process Description</h3>
+        <ul>
+        <li>user need to open an revit project and select the <code>drawing directries</code> which need to be processed</li>
+        <li>the program will rebuild the model for each drawing and import them in the current revit project</li>
+        </ul>
+        <h3 id="environment">Environment</h3>
+        <p><img src="imgs/revit-logo.png" alt="Revit"></p>
+        <h3 id="process">Process</h3>
+        <ol>
+        <li>Open the revit project<blockquote>
+        <p>Usually customer will provide a project template with proper views set up for contractors to use. If not available, we may just open an empty project with any existing template. </p>
+        </blockquote>
+        </li>
+        <li>Select <code>Drawing Directories</code> needs to be processed</li>
+        <li>Set various arguments</li>
+        <li>Convert<blockquote>
+        <p>models will be constructed in the active revit project</p>
+        </blockquote>
+        </li>
+        </ol>
+        <h3 id="user-interface">User Interface</h3>
+        <h4 id="start-the-program">Start the program</h4>
+        <p><img src="https://i.imgur.com/ZetBfre.png" alt=""></p>
+        <h4 id="select-drawing-data-from-project-directory-">Select drawing data from <code>Project Directory</code></h4>
+        <p><img src="https://i.imgur.com/fMcRS7u.png" alt=""></p>
+        <h4 id="main-ui">Main UI</h4>
+        <p><img src="https://i.imgur.com/aCETzZM.png" alt=""></p>
+        <h3 id="arguments">Arguments</h3>
+
+        <h4 id="-drawings-"><code>Drawings</code></h4>
+
+        <ul>
+        <li>the selected drawings which will be converted and import to current revit project</li>
+        </ul>
+        <h4 id="-enable-post-transformation-"><code>Enable Post Transformation</code></h4>
+        <ul>
+        <li>this is used to place the <code>revit</code> model in a different place than the <code>AutoCAD</code> model</li>
+        <li>this is usually due to the <code>project origin</code> is different with our <code>drawing origin</code></li>
+        <li>if this is unchecked. the generated revit model will have the same origin as AutoCAD model</li>
+        </ul>
+        <h4 id="-enable-information-attachment-"><code>Enable Information Attachment</code></h4>
+        <ul>
+        <li>This is to tell the program to attach some <code>data/attributes</code> to the revit model after conversion</li>
+        <li>If this is unchecked, the generated revit model will be a 3D model without any data</li>
+        <li>If the <code>Idenfier Attributes</code> is not defined in the <code>Step 1</code>, the program is not able to attach any data.</li>
+        </ul>
+        <h4 id="-information-sheet-"><code>Information Sheet</code></h4>
+        <ul>
+        <li><code>Information Sheet</code> defines what data the user want to attach to the model</li>
+        <li>The <code>Information Sheet</code> must contains the <code>Identifer Attribute</code></li>
+        <li>The <code>Identifier Attributes</code> can be any name (eg . <code>Equipment_Id</code>, <code>REF_DESC</code>)</li>
+        <li>Each column will be a property in Revit, the column name will be the property name.</li>
+        </ul>
+        <h4 id="-information-sheet-example-"><code>Information Sheet Example</code></h4>
+        <p><code>T2E_Project_BOM.csv</code></p>
+        <table>
+        <thead>
+        <tr>
+        <th>Equipment_Id</th>
+        <th>Property1</th>
+        <th>Property2</th>
+        <th>...</th>
+        <th>PropertyX</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>CTT010.CON010</td>
+        <td>Text</td>
+        <td>Text</td>
+        <td>...</td>
+        <td>Text</td>
+        </tr>
+        <tr>
+        <td>CTT010.CON020</td>
+        <td>Text</td>
+        <td>Text</td>
+        <td>...</td>
+        <td>Text</td>
+        </tr>
+        <tr>
+        <td>CTT010.CON030</td>
+        <td>Text</td>
+        <td>Text</td>
+        <td>...</td>
+        <td>Text</td>
+        </tr>
+        <tr>
+        <td>CTT010.CON040</td>
+        <td>Text</td>
+        <td>Text</td>
+        <td>...</td>
+        <td>Text</td>
+        </tr>
+        <tr>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        </tr>
+        </tbody>
+        </table>
+        <ul>
+        <li>the columns can be freely extended based on how many properties the customer wish to have in the revit model</li>
+        </ul>
+        <h4 id="-key-attribute-"><code>Key Attribute</code></h4>
+        <ul>
+        <li>to tell the program what is the <code>Idenfier Attribute</code> in the information sheet</li>
+        <li>The name may be different with AutoCAD attributes such as <code>Equipment_Id</code></li>
+        </ul>
+        <h4 id="-parameter-rule-"><code>Parameter Rule</code></h4>
+        <ul>
+        <li>This is a <code>csv</code> file to define <code>where</code> and <code>how</code> to place the parameter</li>
+        <li>In Revit, we have <code>Type Parameter</code> and <code>Instance Paramter</code></li>
+        <li>In Revit, each parameter category has different parameter groups</li>
+        <li>By default, all paramter is <code>Instance Parameter</code> and placed in the <code>Data</code> cateogry</li>
+        </ul>
+        <h4 id="-example-of-parameter-rule-file-"><code>Example of Parameter Rule File</code></h4>
+        <p><code>Typical_Parameter_Rule.csv</code></p>
+        <table>
+        <thead>
+        <tr>
+        <th>Parameter_Name</th>
+        <th>Parameter_Type</th>
+        <th>Parameter_Category</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>Property1</td>
+        <td>Instance</td>
+        <td>Data</td>
+        </tr>
+        <tr>
+        <td>Property2</td>
+        <td>Instance</td>
+        <td>Data</td>
+        </tr>
+        <tr>
+        <td>Property3</td>
+        <td>Type</td>
+        <td>Identity Data</td>
+        </tr>
+        <tr>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        </tr>
+        </tbody>
+        </table>
+        <ul>
+        <li>As by default, if the parameter in the <code>Information Sheet</code> is not defined in the <code>Parameter Rule</code>, the parameter will be placed in the <code>Data</code> category as an <code>Instance Parameter</code></li>
+        </ul>
+        <h4 id="-enable-addtional-settings-"><code>Enable Addtional Settings</code></h4>
+        <ul>
+        <li>you may transform the family name</li>
+        <li>you may transform the family type name</li>
+        </ul>
+        <p><code>additional_project_settings.txt</code></p>
+        <pre><code>// comments starts with //, it will be ignored by the computer
+        // you may <span class="hljs-keyword">comment</span> <span class="hljs-keyword">or</span> uncomment <span class="hljs-keyword">lines</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">enable</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">disable</span> the <span class="hljs-keyword">settings</span>
+
+        // <span class="hljs-keyword">add</span> a prefix <span class="hljs-keyword">for</span> the family <span class="hljs-keyword">name</span>
+        prefix-family-<span class="hljs-keyword">name</span> BEU_
+
+        // <span class="hljs-keyword">add</span> a postfix <span class="hljs-keyword">for</span> the family <span class="hljs-keyword">name</span>
+        postfix-family-<span class="hljs-keyword">name</span> _GENERIC
+
+        // <span class="hljs-keyword">replace</span> certain parts <span class="hljs-keyword">of</span> the family <span class="hljs-keyword">name</span>
+        substitute-family-<span class="hljs-keyword">name</span> _ <span class="hljs-keyword">with</span> -
+
+        // <span class="hljs-keyword">add</span> a postfix <span class="hljs-keyword">to</span> the family <span class="hljs-keyword">type</span> <span class="hljs-keyword">name</span>
+        // <span class="hljs-keyword">by</span> <span class="hljs-keyword">default</span>, family <span class="hljs-keyword">type</span> <span class="hljs-keyword">name</span> will be the same <span class="hljs-keyword">as</span> family <span class="hljs-keyword">name</span>
+        postfix-<span class="hljs-keyword">type</span>-<span class="hljs-keyword">name</span> _GENERIC
+
+        // <span class="hljs-keyword">set</span> the family <span class="hljs-keyword">type</span> <span class="hljs-keyword">name</span> directly
+        // <span class="hljs-keyword">if</span> this <span class="hljs-keyword">is</span> <span class="hljs-keyword">set</span>, prefix <span class="hljs-keyword">and</span> postifix will be ignored
+        <span class="hljs-keyword">set</span>-<span class="hljs-keyword">type</span>-<span class="hljs-keyword">name</span> BHS-Equipment
+
+        // <span class="hljs-keyword">set</span> the omni <span class="hljs-keyword">class</span> code
+        // a limited <span class="hljs-keyword">set</span> <span class="hljs-keyword">of</span> built <span class="hljs-keyword">in</span> parameter <span class="hljs-keyword">is</span> supported currently.
+        // kindly approch me <span class="hljs-keyword">if</span> you <span class="hljs-keyword">found</span> a built <span class="hljs-keyword">in</span> parameter <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> supported
+        <span class="hljs-keyword">set</span>-parameter <span class="hljs-string">'OmniClass Number'</span> <span class="hljs-number">123.456</span><span class="hljs-number">.789</span><span class="hljs-number">.10</span>
+
+        // <span class="hljs-keyword">set</span> the phase <span class="hljs-keyword">for</span> all created objects
+        // the phase must be <span class="hljs-keyword">present</span> <span class="hljs-keyword">in</span> the <span class="hljs-keyword">document</span><span class="hljs-string">'s phase list in revit. otherwise it won'</span>t <span class="hljs-keyword">work</span>
+        <span class="hljs-keyword">set</span>-parameter <span class="hljs-string">'Phase Created'</span> <span class="hljs-string">'New Construction'</span>
+
+        // <span class="hljs-keyword">set</span> a parameter <span class="hljs-keyword">value</span> <span class="hljs-keyword">for</span> all the created objects
+        // <span class="hljs-keyword">if</span> the parameter <span class="hljs-keyword">name</span> <span class="hljs-keyword">or</span> <span class="hljs-keyword">value</span> contains <span class="hljs-keyword">space</span>, you should quote them
+        // this parameter may <span class="hljs-keyword">or</span> may <span class="hljs-keyword">not</span> be contained <span class="hljs-keyword">in</span> your parameter sheet.
+        // <span class="hljs-keyword">if</span> it <span class="hljs-keyword">is</span> contained the parameter sheet, it will overwrite the value.
+        // <span class="hljs-keyword">if</span> it <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> contained <span class="hljs-keyword">in</span> the paramter sheet, the program will make sure it <span class="hljs-keyword">is</span> added <span class="hljs-keyword">to</span> your family defintion
+        <span class="hljs-keyword">set</span>-parameter <span class="hljs-string">'parameter name'</span> <span class="hljs-string">'parameter value'</span>
+        </code></pre><ul>
+        <li>For text literals contains space, a quote/double quote should be set around them</li>
+        <li>If no quote is detected, the program will take the text with space as multiple items and may report error to you.</li>
+        </ul>
+        <h2 id="known-issues">Known Issues</h2>
+        <p><strong>Program shows error when I import the same drawing twice</strong></p>
+        <p>Revit will not release the drawing memory even after the family is loaded, thus cause it not accessible once imported. consider this as a feature to prevent you from import the same draiwng twice in your project.</p>
+        <p><strong>Fix :</strong> Close Revit and re-import the cad data,</p>
+        <hr>
+        <p><strong>Program terminated unexpectly</strong></p>
+        <p>Monitor memory useage on laptop, memory will be used up if you</p>
+        <ul>
+        <li>Import too many drawings in one go</li>
+        <li>Drawing is too large</li>
+        <li>Drawing contains too complicated geomery (typically an import from Solidworks)</li>
+        </ul>
+        <p><strong>Fix :</strong> Divide your import into smaller chunks. close memory intensive application such as AutoCAD, Naviswork, Chrome etc.</p>
+        <hr>
+        <p><strong>Import fails when drawing contains geomery that is scaled non-unformly</strong></p>
+        <p>It is not recommended to scale entity non-uniformly. try to resolve the issue first in AutoCAD before the import</p>
+        <p><strong>Fix :</strong> make sure the scaling of blocks is always <strong>1, 1, 1</strong></p>
+        <hr>
+        <p><strong>Some of my surfaces or meshes are missing from the imports</strong></p>
+        <p>In the first step, only solids and blocks are considered valid 3D gemoetry and recorded for second step to process. If you want to include other geomerty such as <code>line</code> , <code>polyline</code>, <code>surfaces</code>, <code>mesh</code>, make sure to create a block to host them</p>
+        <h3 id="final-words">Final words</h3>
+        <ul>
+        <li>Please use the comment feature to <code>contribute</code> to this document </li>
+        <li>If you want to have permission to modify this document, please email  <code>chen.jing@beumer.com</code></li>
+        <li>For any questions, please contact <code>chen.jing@beumer.com</code></li>
+        </ul>
+    </body>
+</html>
