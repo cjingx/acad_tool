@@ -19,116 +19,111 @@
 		</div>
 		<hr>
 
-        <h1 >BGS Acad Tool</h1>
-		<br>
-		<h2 >Indexing Tool</h2>
+	<h1 >BGS Acad Tool</h1>
+
+	<br>
+
+	<!-- section -->
+	<h2 >Indexing Tool</h2>
 
 		<h3 ><code>RINDEX</code></h3>
-
-		<ul>
-			<li>Stands for <strong>Rapid Indexing</strong> </li>
-			<li>It enables you to create <code>Area_Function_Index</code> for a row  of conveyors using a single click. </li>
-		</ul>
-
+			<ul>
+				<li>Stands for <strong>Rapid Indexing</strong> </li>
+				<li>It enables you to create <code>Area_Function_Index</code> for a row  of conveyors using a single click. </li>
+			</ul>
 		<h3 ><code>NINDEX</code></h3>
-		<ul>
-			<li>Stand for <strong>Next Indexing</strong> </li>
-			<li>It will ask the user to select the conveyors one by one to update <code>Area Function Indexing</code> </li>
-		</ul>
-
-		<blockquote>
-		Both <code>RINDEX</code> and <code>PINDEX</code> will update the <code>AREA_FUNCTION</code>, <code>AREA_FUNCTION_INDEX</code> and <code>REF_DESC</code>. Default prefix will be added to besd conveyors.
-		<code>RINDEX</code> and <code>NINDEX</code> can be triggered interactively at the end of the command, so you can continue labelling when encouter customized block.
-		</blockquote>
+			<ul>
+				<li>Stand for <strong>Next Indexing</strong> </li>
+				<li>It will ask the user to select the conveyors one by one to update <code>Area Function Indexing</code> </li>
+			</ul>
+			<blockquote>
+			Both <code>RINDEX</code> and <code>PINDEX</code> will update the <code>AREA_FUNCTION</code>, <code>AREA_FUNCTION_INDEX</code> and <code>REF_DESC</code>. Default prefix will be added to besd conveyors.
+			<code>RINDEX</code> and <code>NINDEX</code> can be triggered interactively at the end of the command, so you can continue labelling when encouter customized block.
+			</blockquote>
 		<h3 ><code>PINDEX</code></h3>
-		<ul>
-		<li>Stand for <strong>Prefix Indexing</strong>
-		</li>
-		<li>It will ask the user for a prefix and update the conveyors&#39; attributes.
-		</li>
-		<li>It is usually useful for customized special conveyors
-		</li>
-		</ul>
+			<ul>
+				<li>Stand for <strong>Prefix Indexing</strong> </li>
+				<li>It will ask the user for a prefix and update the conveyors&#39; attributes.  </li>
+				<li>It is usually useful for customized special conveyors </li>
+			</ul>
 		<h3 ><code>INDEXCONFIG</code></h3>
-		<ul>
-		<li>Opening the configuration file for the index tool.
-		</li>
-		<li>Prefix for standard BESD equipment can be changed or omitted in this file.
-		</li>
-		<li>Once the file is saved. we need to run <code>LOADINDEXCONFIG</code> to apply the changes.
-		</li>
-		</ul>
+			<ul>
+				<li>Opening the configuration file for the index tool.  </li>
+				<li>Prefix for standard BESD equipment can be changed or omitted in this file.  </li>
+				<li>Once the file is saved. we need to run <code>LOADINDEXCONFIG</code> to apply the changes.  </li>
+			</ul>
 		<h3 ><code>LOADINDEXCONFIG</code></h3>
-		<ul>
-		<li>Apply settings from the configuration file.</li>
-		</ul>
+			<ul>
+				<li>Apply settings from the configuration file.</li>
+			</ul>
+
 		<br/>
-		<h2 >Attribute Editor</h2>
+		
+	<!-- section -->
+	<h2 >Attribute Editor</h2>
+
 		<h3 ><code>ATE</code></h3>
-		<ul>
-		<li>Stands for <strong>Attribute Editor</strong>
-		</li>
-		<li>It provides simple interface to edit attributes for <strong>single</strong> conveyor
-		</li>
-		</ul>
+			<ul>
+				<li>Stands for <strong>Attribute Editor</strong> </li>
+				<li>It provides simple interface to edit attributes for <strong>single</strong> conveyor </li>
+			</ul>
 		<h3 ><code>ATT</code></h3>
-		<ul>
-		<li>Stands for <strong>Attribute Editor</strong>
-		</li>
-		<li>It provides bulk editing option for conveyors.
-		</li>
-		<li>It also allow user to swap the values of two attributes.
-		</li>
-		</ul>
+			<ul>
+				<li>Stands for <strong>Attribute Editor</strong> </li>
+				<li>It provides bulk editing option for conveyors.  </li>
+				<li>It also allow user to swap the values of two attributes.  </li>
+			</ul>
+		<h3 ><code>ATTX</code></h3>
+			<ul>
+				<li>Stands for <strong>Attribute Editor</strong> </li>
+				<li>It can add/remove attributes for all blocks definitions in the drawings </li>
+			</ul>
 		<h3 ><code>ACC</code></h3>
-		<ul>
-		<li>stands for <strong>Attribute Copy</strong>
-		</li>
-		<li>It copy <strong>all</strong> attributes from one conveyor to another conveyor.
-		</li>
-		</ul>
+			<ul>
+				<li>stands for <strong>Attribute Copy</strong> </li>
+				<li>It copy <strong>all</strong> attributes from one conveyor to another conveyor.  </li>
+			</ul>
+		<h3 ><code>ATTCOLOR</code></h3>
+			<ul>
+				<li>stands for <strong>Attribute Coloring</strong> </li>
+				<li>It color <strong>all</strong> blocks in the drawing based on attribute value, so same attribute value will have same color</li>
+				<li>It also privide functionality to select a csv file which contains a list of <code>attvalue, colorCode</code></li>
+			</ul>
+
 		<br/>
-		<h2 >Geometry Creation - Conveyor</h2>
+
+	<!-- section -->
+	<h2 >Geometry Creation - Conveyor</h2>
 		<h3 ><code>CPSP</code></h3>
-		<ul>
-		<li>Stands for <strong>Crisplant Conveyor Support</strong>
-		</li>
-		<li>It creates conveyor supports for multiple conveyors using one click.
-		</li>
-		</ul>
+			<ul>
+				<li>Stands for <strong>Crisplant Conveyor Support</strong> </li>
+				<li>It creates conveyor supports for multiple conveyors using one click.  </li>
+			</ul>
 		<h3 ><code>CPRP</code></h3>
-		<ul>
-		<li>Stands for <strong>Crisplant Replace Support</strong>
-		</li>
-		<li>It replace conveyor supports with new parameters.
-		</li>
-		</ul>
+			<ul>
+				<li>Stands for <strong>Crisplant Replace Support</strong> </li>
+				<li>It replace conveyor supports with new parameters.  </li>
+			</ul>
 		<h3 ><code>CPFP</code></h3>
-		<ul>
-		<li><code>This feature is under devdelopment</code>
-		</li>
-		<li>Stands for <strong>Crisplant Filling Plate</strong>
-		</li>
-		<li>It creates the 3d filling plate between conveyors.
-		</li>
-		</ul>
+			<ul>
+				<li><code>This feature is under devdelopment</code> </li>
+				<li>Stands for <strong>Crisplant Filling Plate</strong> </li>
+				<li>It creates the 3d filling plate between conveyors.  </li>
+			</ul>
 		<h3 ><code>BCV</code></h3>
-		<ul>
-		<li>It stands for <strong>Bottom Cover Generator</strong> 
-		</li>
-		<li>It helps you generate bottom covers by selecting corresponding conveyors
-		</li>
-		<li>It is applicable to the following entity : 
-		<ul>
-		<li>Straight CrisBelt
-		</li>
-		<li>Nose Over CrisBelt
-		</li>
-		</ul>
-		</li>
-		</ul>
+			<ul>
+				<li>It stands for <strong>Bottom Cover Generator</strong> </li>
+				<li>It helps you generate bottom covers by selecting corresponding conveyors </li>
+				<li>It is applicable to the following entity : <ul>
+				<li>Straight CrisBelt </li>
+				<li>Nose Over CrisBelt </li>
+			</ul>
+
 		<br/>
-		<h2 >Geometry Creation - Safety Fencing</h2>
+
+		<!-- section -->
+	<h2 >Geometry Creation - Safety Fencing</h2>
+
 		<h3 ><code>CPFEN</code></h3>
 		<ul>
 		<li>Stands for <strong>Crisplant Fencing Tool</strong>
@@ -160,7 +155,9 @@
 		</li>
 		</ul>
 		<br/>
-		<h2 >Geometry Creation - Steelwork</h2>
+
+	<!-- section -->
+	<h2 >Geometry Creation - Steelwork</h2>
 		<h3 ><code>STA</code></h3>
 		<ul>
 		<li>Stands for <strong>Stair</strong>
@@ -194,7 +191,8 @@
 		</li>
 		</ul>
 		<br/>
-		<h2 >Geometry Creation - Access</h2>
+	<!-- section -->
+	<h2 >Geometry Creation - Access</h2>
 		<h3 ><code>MVOLUME</code></h3>
 		<ul>
 		<li>It stands for <strong>Maintainence Volume Generator</strong>
@@ -215,118 +213,89 @@
 		<blockquote>
 		Mvolume comes with two modes. solid mode and block mode. block mode will created unamed block with ref_desc of the conveyor.
 		</blockquote>
-		<h3 ><code>RU</code></h3>
+		<h3 ><code>ROUTE</code></h3>
 		<ul>
-		<li>It stands for <strong>Undirectional Route Creator</strong>
-		</li>
-		<li>It convert a series of <code>plyline</code> into maintainence route symbols (<strong>undirectional</strong>)
-		</li>
+			<li>It stands for <strong>Route Creator</strong> </li>
+			<li>It convert a series of <code>plyline</code> into maintainence route symbols (<strong>undirectional</strong>) </li>
 		</ul>
 		<blockquote>
-		It will not calculate the distance.
-		</blockquote>
-		<h3 ><code>RD</code></h3>
-		<ul>
-		<li>It stands for <strong>Directional Route Creator</strong>
-		</li>
-		<li>It convert a series of <code>plyline</code> into egress route symbols (<strong>directional</strong>)
-		</li>
-		</ul>
-		<blockquote>
-		It will not calculate the distance.
+			It will not calculate the distance.
 		</blockquote>
 		<h3 ><code>CHECKLENGTH</code></h3>
 		<ul>
-		<li>Calcuate the distance of a access route by clicking a series of points. 
-		</li>
-		<li>It will add the text label at the begining of the route.
-		</li>
+			<li>Calcuate the distance of a access route by clicking a series of points.  </li>
+			<li>It will add the text label at the begining of the route.  </li>
 		</ul>
+
 		<br/>
-		<h2 >BESD Info Handling</h2>
-		<h3 ><code>TESTCURVE</code></h3>
+
+		<!-- section -->
+	<h2 >BESD Info Handling</h2>
+	<h3 ><code>TESTCURVE</code></h3>
 		<ul>
-		<li>It stands <code>Test Power Curve Radius</code>
-		</li>
-		<li>you will be prompted to input a radius.
-		</li>
-		<li>the program will highlight any power curve which has a different radius.
-		</li>
+			<li>It stands <code>Test Power Curve Radius</code> </li>
+			<li>you will be prompted to input a radius.  </li>
+			<li>the program will highlight any power curve which has a different radius.  </li>
 		</ul>
 		<h3 ><code>INCA</code></h3>
-		<ul>
-		<li>It stands for <strong>Inclination Addition</strong>
-		</li>
-		<li>It adds inclination marks for besd conveyors.
-		</li>
-		</ul>
+			<ul>
+				<li>It stands for <strong>Inclination Addition</strong> </li>
+				<li>It adds inclination marks for besd conveyors.  </li>
+			</ul>
 		<h3 ><code>INCD</code></h3>
-		<ul>
-		<li>It stands for <strong>Inclination Delete</strong>
-		</li>
-		<li>It remove all teh inclination marks for besd conveyors.
-		</li>
-		</ul>
+			<ul>
+				<li>It stands for <strong>Inclination Delete</strong> </li>
+				<li>It remove all teh inclination marks for besd conveyors.  </li>
+			</ul>
 		<h3 ><code>CPX</code></h3>
-		<ul>
-		<li>It calculate the position of conveyors and update its attributes in conveyors.
-		</li>
-		<li>These info includes start/end points coordinats, inclination angle etc.
-		</li>
-		</ul>
+			<ul>
+				<li>It calculate the position of conveyors and update its attributes in conveyors.  </li>
+				<li>These info includes start/end points coordinats, inclination angle etc.  </li>
+			</ul>
 		<h3 ><code>MAKEBESD</code></h3>
-		<ul>
-		<li>It stands for <strong>Make Besd Block</strong>
-		</li>
-		<li>It adds essential besd attributes to customized blocks.
-		</li>
-		</ul>
-		<blockquote>
-		BESD convention in block definition needs to be followed. insertion point will be cp4 point and block needs to be defined from left to right following material flow direction.
-		</blockquote>
+			<ul>
+				<li>It stands for <strong>Make Besd Block</strong> </li>
+				<li>It adds essential besd attributes to customized blocks.  </li>
+			</ul>
+			<blockquote>
+				BESD convention in block definition needs to be followed. insertion point will be cp4 point and block needs to be defined from left to right following material flow direction.
+			</blockquote>
+
 		<br/>
-		<h2 >Block Handling</h2>
+
+	<!-- section -->
+	<h2 >Block Handling</h2>
 		<h3 ><code>MX</code> , <code>MY</code> , <code>MZ</code></h3>
-		<ul>
-		<li>Move function in x, y , z directions.</li>
-		</ul>
+			<ul>
+				<li>Move function in x, y , z directions.</li>
+			</ul>
 		<h3 ><code>AX</code> , <code>AY</code></h3>
-		<ul>
-		<li>Move element in x or y direction so it match the orientation of another element.</li>
-		</ul>
+			<ul>
+				<li>Move element in x or y direction so it match the orientation of another element.</li>
+			</ul>
 		<h3 ><code>RB</code></h3>
-		<ul>
-		<li>It stands for <strong>Replace Block</strong>
-		</li>
-		<li>It replace one block with another block. 
-		</li>
-		</ul>
-		<blockquote>
-		In the command of <code>RB</code>, attributes, layers are also updated.
-		</blockquote>
-		<h3 ><code>ADDATT</code></h3>
-		<ul>
-		<li>It stands for <strong>Add Attribute</strong>
-		</li>
-		<li>It will add an attribute for all blocks in the drawing.
-		</li>
-		</ul>
+			<ul>
+				<li>It stands for <strong>Replace Block</strong> </li>
+				<li>It replace one block with another block.  </li>
+			</ul>
+			<blockquote>
+				In the command of <code>RB</code>, attributes, layers are also updated.
+			</blockquote>
 		<h3 ><code>FC</code></h3>
-		<ul>
-		<li>It stands for <strong>Fast Copy</strong>
-		</li>
-		<li>It copy the selected object based on WCS point (0, 0, 0)
-		</li>
-		</ul>
+			<ul>
+				<li>It stands for <strong>Fast Copy</strong> </li>
+				<li>It copy the selected object based on WCS point (0, 0, 0) </li>
+			</ul>
 		<h3 ><code>FP</code></h3>
-		<ul>
-		<li>It stands for <strong>Fast Paste</strong>
-		</li>
-		<li>It paste the objects in clipboard based on WCS point (0,0,0)
-		</li>
-		</ul>
+			<ul>
+				<li>It stands for <strong>Fast Paste</strong> </li>
+				<li>It paste the objects in clipboard based on WCS point (0,0,0) </li>
+			</ul>
+
 		<br/>
-		<h2 >XREF Handling</h2>
+
+	<!-- section -->
+	<h2 >XREF Handling</h2>
 		<h3 ><code>REFC</code></h3>
 		<ul>
 		<li>It stands for <strong>XREF Color</strong>
@@ -346,7 +315,9 @@
 		</li>
 		</ul>
 		<br/>
-		<h2 >Searching Function</h2>
+
+	<!-- section -->
+	<h2 >Searching Function</h2>
 		<h3 ><code>FB</code></h3>
 		<ul>
 		<li>It stands for <strong>Find Block</strong>
@@ -369,7 +340,9 @@
 		</li>
 		</ul>
 		<br/>
-		<h2 >Measuring Function</h2>
+
+	<!-- section -->
+	<h2 >Measuring Function</h2>
 		<h3 ><code>CPLEN</code></h3>
 		<ul>
 		<li>Stands for <strong>Crisplant Length Tool</strong>
@@ -392,7 +365,9 @@
 		</li>
 		</ul>
 		<br/>
-		<h2 >Layer Handling Functions</h2>
+
+	<!-- section -->
+	<h2 >Layer Handling Functions</h2>
 		<h3 ><code>LAYF</code></h3>
 		<ul>
 		<li>stands for layer freeze
@@ -407,7 +382,9 @@
 		<li>color layer quickly using a command line regular expression (wildcards) </li>
 		<li>you can also save these wildcards in a file, so you could reuse them again and again</li>
 		</ul>
-		<h2 >BOM Generation Functions</h2>
+
+	<!-- section -->
+	<h2 >BOM Generation Functions</h2>
 		<h3 ><code>CPEXTRACT</code></h3>
 		<ul>
 		<li>Extract block info of the drawing to a database.
