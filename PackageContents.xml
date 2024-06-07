@@ -16,7 +16,7 @@
    
    <Components>
       <RuntimeRequirements OS="Win64" Platform="AutoCAD|AutoCAD*" SeriesMin="24.0" SeriesMax="24.4" SupportPath="./Contents"/>
-      <ComponentEntry AppName="NET_tool" Version="1.0.0" ModuleName="./Contents/BGS_Acad_Tool.dll" LoadOnAutoCADStartup="True"/>	  
+      <ComponentEntry AppName="NET_tool" Version="1.0.0" ModuleName="./Contents/Acad_Tool.dll" LoadOnAutoCADStartup="True"/>	  
 	  <ComponentEntry AppName="Acad_Lisp_Tool" Version="1.0.0" ModuleName="./.lsp/acad_tool.lsp" PerDocument="True"/>
 	  <ComponentEntry AppName="Path_Resolver" Version="1.0.0" 
 					  ModuleName="./.lsp/resolve_path.lsp" 
