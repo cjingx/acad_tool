@@ -7,6 +7,7 @@
 	</head>
 	<body>
 		<div id="banner">
+			<img id="logo" src="imgs/bg_logo.png" alt="bg_logo"/>
 			<span id="page-title"> BGS Tool Help Site </span>
 		</div>
 
@@ -367,6 +368,36 @@
 
 	<!-- section -->
 	<h2 >Layer Handling Functions</h2>
+		<h3 ><code>LAYSCRIPT</code></h3>
+		<ul>
+			<li>stands for layer script </li>
+			<li>support a number of layer operations </li>
+			<li>once you type the command, it prompt you for another command</li>
+			<li>you can either provide a command, or you can point a file containing a bunch of commands</li>
+			<li>example_layer_script.txt</li>
+		</ul>
+<pre style="background-color: gainsboro;">
+<code style="color: Red; background-color: gainsboro;">SHOW XXX</code> : thaw layer XXX
+<code style="color: Red; background-color: gainsboro;">HIDE XXX</code> : freeze layer XXX
+<code style="color: Red; background-color: gainsboro;">UNLOCK XXX</code> : unlock layer XXX
+<code style="color: Red; background-color: gainsboro;">DELETE ALL IN XXX</code> : delete everything in layer XXX
+<code style="color: Red; background-color: gainsboro;">TRANSFER ALL FROM XXX TO YYY</code> : move eveything in layer XXX to layer YYY
+<code style="color: Red; background-color: gainsboro;">COLOR ALL IN XXX TO 125</code> : change everything in layer XXX to color 125
+</pre>
+
+<pre><blockquote>index color is from 0 - 256
+0 means by block
+256 means by layer
+</blockquote>
+<blockquote>YYY must be exact layer names
+XXX can be exact layer names or regular expressions which use patterns to match layers. 
+<code style="background-color: yellow;">.</code> matches any single character in the layer name
+<code style="background-color: yellow;">.*</code> matches all layers
+<code style="background-color: yellow;">.*INTERNAL.*</code> matches all layers contains word "INTERNAL"
+<code style="background-color: yellow;">.*PEC$</code> matches all layers contains word "PEC" in the end
+<code style="background-color: yellow;">^BGH.*</code> matches all layers starting with "BGH"
+</blockquote>
+</pre>
 		<h3 ><code>LAYF</code></h3>
 		<ul>
 		<li>stands for layer freeze
