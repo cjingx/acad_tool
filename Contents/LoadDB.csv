@@ -46,4 +46,5 @@ BGH_CBL_DET_Bentsection_W1000_R2997, 0, 135, 1
 BGH_CBL2_DET_Bentsection_W1000_R2997, 0, 135, 1
 BGH_CBL_DET_Bentsection_W1000_R1497, 0, 120, 1
 BGH_CBL2_DET_Bentsection_W1000_R1497, 0, 120, 1
+BGH_CRV_M06_DriveStation, 1.305, 70, 0
 BGH_CON_DET_Motor, 0, 30, 1
