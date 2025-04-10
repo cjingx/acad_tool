@@ -60,8 +60,27 @@
 		<br/>
 		
 	<!-- section -->
-	<h2 >Attribute Editor</h2>
+	<h2 >Attribute Handling</h2>
 
+		<h3 ><code>ATTSCRIPT</code></h3>
+			<ul>
+				<li>
+					Stands for <strong>Attribute Script</strong> 
+				</li>
+				<li>
+					It provides many functions to handle attributes in AutoCAD
+				</li>
+				<li>Once you enter the command, it will prompt you for another instruction
+					<ol><code style="color:red">add attribute xxx</code> : add a new attribute defintion xxx for all blocks</ol>
+					<ol><code style="color:red">delete attribute xxx</code> : delete attribute defintion xxx for all blocks</ol>
+					<ol><code style="color:red">clear attribute xxx</code> : emtpy the value of attribute xxx for all blocks</ol>
+					<ol><code style="color:red">replace aaa to bbb for xxx</code> : replace aaa in attribute xxx to bbb
+						<ol>attribute value <code>xxxaaaxxx</code> will changed to <code>xxxbbbxxx</code></ol>
+					</ol>
+					<ol><code style="color:red">keep left x for xxx</code> : keep the left x digits for attribute xxx for all blocks</ol>
+					<ol><code style="color:red">keep right x for xxx</code> : keep the left x digits for attribute xxx for all blocks</ol>
+				</li>
+			</ul>
 		<h3 ><code>ATE</code></h3>
 			<ul>
 				<li>Stands for <strong>Attribute Editor</strong> </li>
@@ -73,10 +92,10 @@
 				<li>It provides bulk editing option for conveyors.  </li>
 				<li>It also allow user to swap the values of two attributes.  </li>
 			</ul>
-		<h3 ><code>ATTX</code></h3>
+		<h3 ><code>ATF</code></h3>
 			<ul>
-				<li>Stands for <strong>Attribute Editor</strong> </li>
-				<li>It can add/remove attributes for all blocks definitions in the drawings </li>
+				<li>Stands for <strong>Attribute Transfer</strong> </li>
+				<li>It transfer attribute value from one attribute to another attribute</li>
 			</ul>
 		<h3 ><code>ACC</code></h3>
 			<ul>
@@ -94,6 +113,7 @@
 
 	<!-- section -->
 	<h2 >Geometry Creation - Conveyor</h2>
+
 		<h3 ><code>CPSP</code></h3>
 			<ul>
 				<li>Stands for <strong>Crisplant Conveyor Support</strong> </li>
@@ -110,18 +130,19 @@
 				<li>Stands for <strong>Crisplant Filling Plate</strong> </li>
 				<li>It creates the 3d filling plate between conveyors.  </li>
 			</ul>
-		<h3 ><code>BCV</code></h3>
+		<h3 ><code>CPBC</code></h3>
 			<ul>
 				<li>It stands for <strong>Bottom Cover Generator</strong> </li>
 				<li>It helps you generate bottom covers by selecting corresponding conveyors </li>
-				<li>It is applicable to the following entity : <ul>
-				<li>Straight CrisBelt </li>
-				<li>Nose Over CrisBelt </li>
 			</ul>
-
+		<br/>
+		<h3 ><code>CPBAG</code></h3>
+			<ul>
+				<li>modeling baggage volumes</li>
+			</ul>
 		<br/>
 
-		<!-- section -->
+	<!-- section -->
 	<h2 >Geometry Creation - Safety Fencing</h2>
 
 		<h3 ><code>CPFEN</code></h3>
@@ -191,9 +212,10 @@
 		</li>
 		</ul>
 		<br/>
+
 	<!-- section -->
 	<h2 >Geometry Creation - Access</h2>
-		<h3 ><code>MVOLUME</code></h3>
+		<h3 ><code>CPMV</code></h3>
 		<ul>
 		<li>It stands for <strong>Maintainence Volume Generator</strong>
 		</li>
@@ -211,7 +233,7 @@
 		</li>
 		</ul>
 		<blockquote>
-		Mvolume comes with two modes. solid mode and block mode. block mode will created unamed block with ref_desc of the conveyor.
+		CPMV comes with two modes. solid mode and block mode. block mode will created unamed block with ref_desc of the conveyor.
 		</blockquote>
 		<h3 ><code>ROUTE</code></h3>
 		<ul>
@@ -229,7 +251,7 @@
 
 		<br/>
 
-		<!-- section -->
+	<!-- section -->
 	<h2 >BESD Info Handling</h2>
 	<h3 ><code>TESTCURVE</code></h3>
 		<ul>
@@ -268,10 +290,33 @@
 		<h3 ><code>MX</code> , <code>MY</code> , <code>MZ</code></h3>
 			<ul>
 				<li>Move function in x, y , z directions.</li>
+				<li>x, y, z is measured in your local coordinates, please pay attention to the UCS</li>
 			</ul>
-		<h3 ><code>AX</code> , <code>AY</code></h3>
+		<h3 ><code>MXY</code></h3>
 			<ul>
-				<li>Move element in x or y direction so it match the orientation of another element.</li>
+				<li>Move function in x, y plane</li>
+			</ul>
+		<h3 ><code>CX</code> , <code>CY</code> , <code>CZ</code></h3>
+			<ul>
+				<li>copy function in x, y , z directions.</li>
+				<li>x, y, z is measured in your local coordinates, please pay attention to the UCS</li>
+			</ul>
+		<h3 ><code>MMX</code> , <code>MMY</code>, <code>MMZ</code></h3>
+			<ul>
+				<li>Move element in x or y, z direction so it match the another element.</li>
+				<li>x, y, z is measured in your local coordinates, please pay attention to the UCS</li>
+			</ul>
+		<h3 ><code>OMXY</code></h3>
+			<ul>
+				<li>It stands for <strong>Object Move in XY plane</strong> </li>
+				<li>It move the block from its origin to another point while maintaining the z value</li>
+				<li>It prompt you two times for point selection, if you ignore the seocnd point it will move to point 1</li>
+				<li>It prompt you two times for point selection, if you select the seocnd point it will move to the center of point 1 and point 2</li>
+			</ul>
+		<h3 ><code>OCXY</code></h3>
+			<ul>
+				<li>It stands for <strong>Object Copy in XY plane</strong> </li>
+				<li>Copy version of the command <code>OMXY</code> </li>
 			</ul>
 		<h3 ><code>RB</code></h3>
 			<ul>
@@ -292,6 +337,17 @@
 				<li>It paste the objects in clipboard based on WCS point (0,0,0) </li>
 			</ul>
 
+		<h3 ><code>BLOCKFLIP</code></h3>
+			<ul>
+				<li>Flip a block between Left/Right Version of it</li>
+				<li>Block name must ends with <code>"_L"</code> or <code>"_R"</code>, and a block library (likely in P drive) needs to be defined.</li>
+			</ul>
+
+		<h3 ><code>BLOCKSWAP</code></h3>
+			<ul>
+				<li>Swap block A to block B</li>
+				<li>Block library (likely in P drive) needs to be defined.</li>
+			</ul>
 		<br/>
 
 	<!-- section -->
@@ -374,21 +430,22 @@
 			<li>support a number of layer operations </li>
 			<li>once you type the command, it prompt you for another command</li>
 			<li>you can either provide a command, or you can point a file containing a bunch of commands</li>
-			<li>example_layer_script.txt</li>
+			<li>example_layer_script.txt
+				<ul>
+					<li><code style="color: Red;">unlock layer xxx</code> : unlock layer XXXER XXX/                                                                                  </li>
+					<li><code style="color: Red;">show layer xxx</code> : thaw layer XXX                                                                                             </li>
+					<li><code style="color: Red;">hide layer xxx</code> : freeze layer XXX                                                                                           </li>
+					<li><code style="color: Red;">delete-all on layer xxx</code> : delete everything in layer XXX including nested entities                                          </li>
+					<li><code style="color: Red;">delete-in-ms on layer xxx</code> : delete everything in layer XXX in model space                                                   </li>
+					<li><code style="color: Red;">transfer-all from layer xxx to layer yyy</code> : move eveything in layer XXX to layer YYY including nested entities               </li>
+					<li><code style="color: Red;">transfer-in-ms from layer xxx to layer yyy</code> : move eveything in layer XXX to layer YYY in model space                        </li>
+					<li><code style="color: Red;">color-all on layer xxx to 125</code> : change everything in layer XXX to color 125 including nesteed entites                       </li>
+					<li><code style="color: Red;">color-in-ms on layer xxx to 125</code> : change everything in layer XXX to color 125 in model space                                </li>
+					<li><code style="color: Red;">transfer-block-in-ms xxx to layer yyy</code> : change blocks with name XXX in model space to layer YYY                             </li>
+					<li><code style="color: Red;">transfer-all-in-block xxx to layer yyy</code> : change everything in blocks with name XXX to layer YYY                             </li>
+				</ul>
+			</li>
 		</ul>
-<pre style="background-color: gainsboro;">
-<code style="color: Red; background-color: gainsboro;">UNLOCK LAYER XXX</code> : unlock layer XXXER XXX/
-<code style="color: Red; background-color: gainsboro;">SHOW LAYER XXX</code> : thaw layer XXX
-<code style="color: Red; background-color: gainsboro;">HIDE LAYER XXX</code> : freeze layer XXX
-<code style="color: Red; background-color: gainsboro;">DELETE-ALL ON LAYER XXX</code> : delete everything in layer XXX including nested entities
-<code style="color: Red; background-color: gainsboro;">DELETE-IN-MS ON LAYER XXX</code> : delete everything in layer XXX in model space
-<code style="color: Red; background-color: gainsboro;">TRANSFER-ALL FROM LAYER XXX TO LAYER YYY</code> : move eveything in layer XXX to layer YYY including nested entities
-<code style="color: Red; background-color: gainsboro;">TRANSFER-IN-MS FROM LAYER XXX TO LAYER YYY</code> : move eveything in layer XXX to layer YYY in model space
-<code style="color: Red; background-color: gainsboro;">COLOR-ALL ON LAYER XXX TO 125</code> : change everything in layer XXX to color 125 including nesteed entites
-<code style="color: Red; background-color: gainsboro;">COLOR-IN-MS ON LAYER XXX TO 125</code> : change everything in layer XXX to color 125 in model space
-<code style="color: Red; background-color: gainsboro;">TRANSFER-BLOCK-IN-MS XXX TO LAYER YYY</code> : change blocks with name XXX in model space to layer YYY
-<code style="color: Red; background-color: gainsboro;">TRANSFER-ALL-IN-BLOCK XXX TO LAYER YYY</code> : change everything in blocks with name XXX to layer YYY
-</pre>
 
 <pre><blockquote>index color is from 0 - 256
 0 means by block
@@ -410,6 +467,22 @@ XXX can be exact layer names or regular expressions which use patterns to match 
 		<li>freeze layer quickly using a command line regular expression (wildcards) </li>
 		<li>you can also save these wildcards in a file, so you could reuse them again and again</li>
 		</ul>
+		<h3 ><code>LAYC</code></h3>
+		<ul>
+		<li>stands for layer coloring
+		</li>
+		<li>color layer quickly using a command line regular expression (wildcards) </li>
+		<li>you can also save these wildcards in a file, so you could reuse them again and again</li>
+		</ul>
+
+		<h3 ><code>LAYT/code></h3>
+		<ul>
+		<li>stands for layer thaw
+		</li>
+		<li>thaw layer quickly using a command line regular expression (wildcards) </li>
+		<li>you can also save these wildcards in a file, so you could reuse them again and again</li>
+		</ul>
+
 		<h3 ><code>LAYC</code></h3>
 		<ul>
 		<li>stands for layer coloring
